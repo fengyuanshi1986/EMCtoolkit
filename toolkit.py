@@ -4,7 +4,8 @@ import os
 import sys
 import importlib
 
-# Ensure we can import from the subfolder
+# Add both tool folders to path
+sys.path.append(os.path.join(os.path.dirname(__file__), "tracker"))
 sys.path.append(os.path.join(os.path.dirname(__file__), "rate_calculator"))
 
 st.set_page_config(page_title="EMC Facility Toolkit", layout="wide", page_icon="🔬")
@@ -26,9 +27,9 @@ if app_mode == "🏠 Welcome":
 elif app_mode == "🔭 Publication Tracker":
     import app as tracker
     importlib.reload(tracker)
-    tracker.main_logic()
+    tracker.main_logic() if hasattr(tracker, 'main_logic') else None
 
 elif app_mode == "💰 Rate Calculator":
     import rate_app as calculator
     importlib.reload(calculator)
-    calculator.main_logic()
+    calculator.main_logic() if hasattr(calculator, 'main_logic') else None
