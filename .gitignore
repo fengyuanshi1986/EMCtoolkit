@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Streamlit
+.streamlit/config.toml
+
+# Project Specific Data (Keep local)
+*.db
+*.json
+*.xlsx
+*.xls
+*.csv
+.DS_Store

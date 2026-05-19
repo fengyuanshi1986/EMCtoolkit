@@ -1,0 +1,8 @@
+streamlit
+pandas
+openpyxl
+fuzzywuzzy
+python-levenshtein
+requests
+beautifulsoup4
+lxml
